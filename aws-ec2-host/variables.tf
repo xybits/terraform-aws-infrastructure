@@ -17,7 +17,7 @@ variable "prefix" {
 variable "suffix" {
     description = "Resource name suffix"
     type        = string
-    default     = "bastion"
+    default     = "ec2"
 }
 
 variable "aws_ami" {
@@ -41,6 +41,12 @@ variable "security_group_id" {
     type        = string
 }
 
+variable "associate_public_ip" {
+    description = "Associate public IP Address"
+    type        = bool
+    default     = false
+}
+
 variable "ssh_key" {
     description = "The key name of the Key Pair to use for the instance"
     type        = string
@@ -52,8 +58,20 @@ variable "volume_size" {
     default     = 8
 }
 
-variable "enable" {
-    description = "Instantiate bastion host"
+variable "instance_count" {
+    description = "Number of ec2 hosts"
+    type        = number
+    default     = 1
+}
+
+variable "enable_data_disk_mount" {
+    description = "Enable data volume mount"
     type        = bool
     default     = false
+}
+
+variable "data_disk_size" {
+    description = "The size of the data volume in gigabytes"
+    type        = number
+    default     = 32
 }
