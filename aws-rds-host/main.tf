@@ -17,7 +17,7 @@ resource "aws_db_instance" "rds" {
     engine                  = var.engine
     engine_version          = var.engine_version
 
-    identifier              = local.identifier
+    identifier              = "${var.prefix}-rds-${var.suffix}"
     name                    = var.db_name
     port                    = var.port
     username                = var.username

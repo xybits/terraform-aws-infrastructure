@@ -61,7 +61,7 @@ variable "storage_type" {
 }
 
 variable "db_name" {
-    description = "The databae name"
+    description = "The database name"
     type        = string
     default     = "postgres"
 }
@@ -73,18 +73,18 @@ variable "port" {
 }
 
 variable "username" {
-    description = "The databae username"
+    description = "The database username"
     type        = string
     default     = "postgres"
 }
 
 variable "password" {
-    description = "The databae password"
+    description = "The database password"
     type        = string
 }
 
 variable "backup_retention_period" {
-    description = "Databae backup retention period"
+    description = "Database backup retention period"
     type        = number
     default     = 3
 }
@@ -111,8 +111,4 @@ variable "enable" {
     description = "Instantiate RDS instance"
     type        = bool
     default     = false
-}
-
-locals {
-    identifier = "${var.prefix}-rds-${var.suffix}"
 }
